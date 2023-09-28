@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Public Sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: hsl(0, 0%, 100%);
+    overflow-x: hidden;
+    position: relative;
+}
+p {
+    font-size: 18px;
+    line-height: 28px;
+    color: hsl(233, 8%, 62%);
+}
+
+.section{
+    padding: 0px 150px;
+    min-height: 100vh;
+    position: relative;
+}
+/*==================================== NAV BAR ========================================  */
+.nav__bar{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 150px;
+    z-index: 500;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.nav__bar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    padding-right: 20px;
+}
+
+li a{
+    text-decoration: none;
+    color: hsl(233, 8%, 62%);
+    font-weight: 400;
+}
+
+.nav__bar .hamburger__menu{
+    position: absolute;
+    display: none;
+}
+/*==================================== HOME ========================================  */
+.intro{
+    background-image: url('./images/bg-intro-desktop.svg');
+    background-color: hsl(0, 0%, 98%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 650px;
+    background-position-y: -230px;
+    display: flex;  
+    align-items: center;
+    min-height: 100vh;  
+}
+
+.intro .intro__content{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.intro__content h1{
+    font-size: 60px;
+    font-weight: 400;
+    color: hsl(233, 26%, 24%);
+}
+
+.nav__bar .request__invoice,
+.intro__content .request__invoice,
+.footer .request__invoice{
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background:linear-gradient(90deg,hsl(136, 65%, 51%),hsl(192, 70%, 51%));
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+}
+
+.intro .intro__image img{
+    position: absolute;
+    right: -8%;
+    top: -5%;
+    z-index: 30;
+}
+
+/*==================================== ABOUT ========================================  */
+.about{
+    background-color: hsl(0, 0%, 98%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px 0px;
+    min-height: 100vh;
+}
+
+.about .about__one h2{
+    font-size: 40px;
+    font-weight: 400;
+    color: hsl(233, 26%, 24%);
+    margin-bottom: 25px;
+}
+
+.about .about__two{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.about .about__two .feature{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+    text-wrap: balance;
+    gap: 30px 0px;
+}
+
+.feature img{
+    height: 80px;
+    width: 80px;
+}
+
+.feature h3{
+    font-size: 25px;
+    font-weight: 400;
+    color: hsl(233, 26%, 24%);
+}
+
+/*==================================== BLOG ========================================  */
+.blog {
+    background-color: hsl(220, 16%, 96%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.blog h2{
+    font-size: 40px;
+    font-weight: 400;
+    color: hsl(233, 26%, 24%);
+    margin-bottom: 45px;
+}
+.blog .blog__cards{
+    text-wrap: balance;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.blog__cards .card{
+    background-color: white;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.card .card__image img{
+    width: 100%;
+    height: 220px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.card .card__content{
+    padding: 30px 25px 30px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.card__content h6 {
+    font-weight: 700;
+    color: hsl(233, 8%, 62%);
+}
+
+.card__content h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: hsl(233, 26%, 24%);
+}
+.card__content p{
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/*==================================== FOOTER ========================================  */
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    background-color: hsl(233, 26%, 24%);
+    display: flex;
+    color: white;
+    padding: 50px 150px;
+    justify-content: space-between;
+    align-items: center;
+    color: hsl(233, 8%, 62%);
+}
+
+.footer .footer__logos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.footer__logos .footer__logos__social img{
+    padding-right: 10px;
+}
+
+.footer .footer__left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.footer h4{
+    font-size: 15px;
+    font-weight: 400;
+    color: hsl(220, 16%, 96%);
+    padding: 8px 0px;
+}
+
+.footer .footer__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}   
+
