@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    min-width: 90%;
+}
+
+.section-header .nav-bar {
+    padding: 2rem 0rem;
+    grid-column: 2/10;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.nav-bar .logo {
+    grid-column: 1/2;
+    align-self: center;
+    justify-content: start;
+}
+
+.nav-bar .menu-links {
+    justify-self: end;
+    cursor: pointer;
+    z-index: 100;
+    display: none;
+    transition: all 0.5s ease-in;
+}
+
+.nav-bar .nav-links {
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: end;
+}
+
+.nav-links.show-menu {
+    display: block;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links.show-menu ul {
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5rem;
+    display: inline-block;
+    padding: 130px 30px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 50;
+}
+
+
+.nav-links.show-menu li {
+    padding: 30px 0;
+}
+
+.nav-links li {
+    list-style-type: none;
+    padding-right: 2rem;
+}
+
+.nav-links a {
+    color: hsl(273, 4%, 51%);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: hsl(270, 9%, 17%);
+}
+
+.section-hero {
+    padding-top: 5rem;
+    position: relative;
+}
+
+.section-hero .hero {
+    color: white;
+    grid-column: 2/10;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section-hero::after {
+    position: absolute;
+    content: '';
+    background-color: hsl(256, 26%, 20%);
+    width: 100%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero .hero-content {
+    padding-top: 5rem;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    align-self: top;
+    gap: 2rem;
+    position: relative;
+}
+
+.hero-content::after {
+    content: '';
+    background-color: white;
+    height: 1px;
+    width: 25%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+}
+
+h1 span {
+    display: block;
+}
+
+.hero-content p {
+    /* font-size: 16px; */
+    font-size: calc(16px+100vw);
+    line-height: 32px;
+    text-align: left;
+    text-wrap: balance;
+}
+
+.nav-links button,
+.hero-content button,
+.about-info button {
+    padding: 15px 30px;
+    text-transform: uppercase;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-links button {
+    border: 1px solid hsl(270, 9%, 17%);
+    color: hsl(270, 9%, 17%);
+}
+
+.nav-links button:hover {
+    color: white;
+    background-color: hsl(270, 9%, 17%);
+    cursor: pointer;
+}
+
+.hero-content button:hover,
+.about-info button:hover {
+    color: hsl(270, 9%, 17%);
+    background-color: white;
+    cursor: pointer;
+}
+
+.hero-content button {
+    justify-self: start;
+}
+
+.hero .hero-image {
+    grid-column: 2/3;
+}
+
+.hero-image .mobile {
+    display: none;
+}
+
+.hero-image img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-features {
+    margin-top: 8rem;
+}
+
+.features {
+    grid-column: 2/10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 5rem;
+}
+
+.features h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+}
+
+.features .features-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-wrap: balance;
+}
+
+.features-list img {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+}
+
+.features-list .feature {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+}
+
+.feature-info {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    gap: 1rem;
+}
+
+
+.about {
+    grid-column: 2/10;
+    margin-top: 8rem;
+
+}
+
+.about .about-info {
+    background-color: hsl(256, 26%, 20%);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.about-info h2 {
+    font-size: 3rem;
+    justify-self: start;
+    align-self: center;
+}
+
+.about-info h2 span {
+    display: block;
+}
+
+.about-info button {
+    align-self: center;
+    justify-self: end;
+}
+
+.section-footer {
+    margin-top: 8rem;
+    background-color: hsl(0, 0%, 98%);
+    padding: 3.5rem 0rem;
+    list-style-type: none;
+}
+
+.section-footer .footer-top,
+.section-footer .footer-bottom {
+    grid-column: 2/10;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 0rem;
+    align-items: center;
+    position: relative;
+}
+
+.footer-top::after {
+    content: '';
+    position: absolute;
+    background-color: hsl(273, 4%, 51%);
+    height: 1.5px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+
+.footer-top .socials {
+    align-self: center;
+    justify-self: end;
+    font-size: 25px;
+    color: hsl(273, 4%, 51%);
+}
+
+.socials i {
+    padding-right: 1rem;
+}
+
+.socials i:hover {
+    color: hsl(256, 26%, 20%);
+    cursor: pointer;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem 0rem;
+    justify-content: start;
+    gap: 3rem;
+}
+
+.footer-bottom .title {
+    padding-bottom: 1.5rem;
+    color: hsl(273, 4%, 51%);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.footer-bottom li {
+    padding-bottom: 0.5rem;
+}
+
+li a {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer-bottom a {
+    color: hsl(256, 26%, 20%);
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:478px) {
+    body {
+        position: relative;
+    }
+
+    section {
+        display: block;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-bar .menu-links {
+        display: block;
+    }
+
+    .section-hero {
+        padding: 0;
+    }
+
+    .section-hero::after {
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-hero .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .hero-image img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .hero .hero-content {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content::after {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .hero .hero-image .desktop {
+        display: none;
+    }
+
+    .hero .hero-image .mobile {
+        display: block;
+    }
+
+    .nav-links button,
+    .hero-content button,
+    .about-info button {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .features h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .features .features-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .features-list img {
+        height: 80px;
+        width: 80px;
+        border-radius: 100%;
+    }
+
+    .features-list .feature {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .feature-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+
+    .about .about-info {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .about-info h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .section-footer {
+        padding: 2rem 0rem;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        gap: 1rem;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-bottom .title {
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width:1048px) {
+
+    .section-hero {
+        margin: 0;
+        padding: 0;
+    }
+
+    .section-hero .hero {
+        padding: 0;
+        grid-column: 1/-1;
+    }
+
+    .section-hero::after {
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-hero .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .hero-content {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .hero-content::after {
+        display: none;
+    }
+
+    .hero .hero-image {
+        grid-column: 1/-1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero .hero-image .desktop {
+        display: none;
+    }
+
+    .hero .hero-image .mobile {
+        display: block;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+        object-position: center -200px;
+    }
+
+    .hero-content p {
+        text-align: center
+    }
+
+    .features {
+        text-align: center;
+    }
+
+    .feature img {
+        justify-self: center;
+    }
+}
