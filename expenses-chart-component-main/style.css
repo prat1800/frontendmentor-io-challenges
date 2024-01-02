@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    background-color: hsl(27, 66%, 92%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.summary {
+    color: #fff;
+    background-color: hsl(10, 79%, 65%);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-radius: 15px;
+}
+
+.summary p {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.summary h3 {
+    color: #fff;
+    margin-top: 5px;
+}
+
+.summary img {
+    height: 50px;
+    width: 50px;
+}
+
+.detail {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 15px;
+}
+
+h2,
+h3,
+h5 {
+    color: hsl(25, 47%, 15%)
+}
+
+.chart {
+    width: max-content;
+    height: 200px;
+    display: flex;
+    gap: 15px;
+}
+
+.line {
+    background-color: hsl(28, 10%, 53%);
+    margin: 20px 0px;
+    height: 1px;
+    width: 100%;
+    opacity: 0.2;
+}
+
+.bar {
+    /* background-color: cyan; */
+    height: 100%;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+
+
+.bar p {
+    color: hsl(28, 10%, 53%);
+    font-size: 11px;
+}
+
+.bar .day {
+    background-color: hsl(10, 79%, 65%);
+    width: 100%;
+    border-radius: 4px;
+    position: relative;
+}
+
+.day:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.day.today {
+    background-color: hsl(186, 34%, 60%)
+}
+
+.day.today:hover {
+    opacity: 0.7;
+}
+
+.day span.amount {
+    position: absolute;
+    background-color: hsl(25, 47%, 15%);
+    color: white;
+    font-size: 13px;
+    bottom: 110%;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 5px 4px;
+    display: none;
+}
+
+.day:hover span.amount {
+    display: block;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.total p {
+    color: hsl(28, 10%, 53%);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.total .info-2 {
+    text-align: right;
+}
+
+@media screen and (max-width: 475px) {
+    .container {
+        width: 90%;
+    }
+
+    .summary {
+        padding: 10px 15px;
+    }
+
+    .detail {
+        padding: 15px 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .chart {
+        width: 100%;
+        height: 100px;
+        gap: 15px;
+        border-radius: 2px;
+    }
+
+    .line {
+        margin: 10px 0px;
+    }
+
+    .bar {
+        width: 30px;
+    }
+
+    .day span.amount {
+        font-size: 8px;
+    }
+
+    .total p {
+        font-size: 11px;
+    }
+
+}
